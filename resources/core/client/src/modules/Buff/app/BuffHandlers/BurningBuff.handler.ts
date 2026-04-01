@@ -9,7 +9,6 @@ export class BurningBuffHandler implements IBuffHandler {
     private readonly fireParticleFxByEntity = new Map<alt.Entity, number>();
 
     public async onApply(entity: alt.Entity): Promise<void> {
-        // s
         if (!natives.hasNamedPtfxAssetLoaded(BURNING_BUFF_PARTICLE_FX.asset)) {
             natives.requestNamedPtfxAsset(BURNING_BUFF_PARTICLE_FX.asset);
             await alt.Utils.waitFor(() => natives.hasNamedPtfxAssetLoaded(BURNING_BUFF_PARTICLE_FX.asset));
@@ -34,7 +33,6 @@ export class BurningBuffHandler implements IBuffHandler {
             true,
             true,
         );
-        alt.log(`fireParticleFx started: ${fireParticleFx}`);
         this.fireParticleFxByEntity.set(entity, fireParticleFx);
     }
 

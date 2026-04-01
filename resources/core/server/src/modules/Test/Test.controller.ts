@@ -32,7 +32,6 @@ export class TestController implements OnModuleInit {
 
     @OnPlayer('console::command')
     public async onBuffCommand(@Body() [name, ...args]: [string, ...string[]]): Promise<void> {
-        alt.log('OnConsoleCommand', name, args);
         const [entityType, rawEntityId, buffType] = args;
         if (!entityType || !rawEntityId || !buffType) {
             return;

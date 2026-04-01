@@ -23,7 +23,6 @@ export class BuffController {
     public async onStreamMetaChanged(
         @Body() [object, key, value, oldValue]: AltEventParams<'streamSyncedMetaChange'>,
     ): Promise<void> {
-        alt.logDebug(`OnStreamSyncedMetaChange ${object.type} ${key} ${JSON.stringify(value)}`);
         if (!(object instanceof alt.Entity) || key !== EntityStreamSyncedMetaKey.Buffs) {
             return;
         }

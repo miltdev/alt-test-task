@@ -29,7 +29,6 @@ export class DebugController {
 
     @OnConsoleCommand()
     public async onBuffCommand(@Body() [name, ...args]: AltEventParams<'consoleCommand'>): Promise<void> {
-        alt.log('OnConsoleCommand', name, args);
         alt.emitServer('console::command', [name, ...args]);
     }
 }
